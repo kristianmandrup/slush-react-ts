@@ -1,6 +1,21 @@
-# Slush React-native-ts-generator [![Build Status](https://secure.travis-ci.org/kristianmandrup/slush-react-native-ts-generator.png?branch=master)](https://travis-ci.org/kristianmandrup/slush-react-native-ts-generator) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-react-native-ts-generator.png)](http://badges.enytc.com/for/npm/slush-react-native-ts-generator)
+# Slush React Native TypeScript generator [![Build Status](https://secure.travis-ci.org/kristianmandrup/slush-react-native-ts-generator.png?branch=master)](https://travis-ci.org/kristianmandrup/slush-react-native-ts-generator) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-react-native-ts-generator.png)](http://badges.enytc.com/for/npm/slush-react-native-ts-generator)
 
-React Native with Typescript
+Use this generator to create a basic React Native app with 
+TypeScript support (ie. [TSX](https://github.com/Microsoft/TypeScript/wiki/JSX)).
+
+This generator is based on the seed project [ReactNativeTS](https://github.com/mrpatiwi/ReactNativeTS)
+
+For info on using [TSX](http://www.jbrantly.com/typescript-and-jsx/)
+
+### Editor/IDE
+
+We recommend using [Visual Studio Code](https://code.visualstudio.com/) 
+with plugins:
+
+- [React Native](https://github.com/Microsoft/vscode-react-native). 
+- [React Native code-push](https://github.com/Microsoft/react-native-code-push)
+
+Be sure to follow [VSC Updates](https://code.visualstudio.com/Updates)
 
 ## Getting Started
 
