@@ -59,9 +59,17 @@ To find out more about Slush, check out the [documentation](https://github.com/s
 
 ## WIP
 
-The next step will be to add TypeScript sub-generators for:
+Currently adding TypeScript generators for:
 - Redux
+- Webpack
+- Web
 - ...
+
+Feel free to suggest on contribute with more generators!
+
+### TODO
+
+Webpack config from [todomvc example](https://github.com/jaysoo/todomvc-redux-react-typescript/)
 
 Suggestions and pull requests most welcome!!
 
