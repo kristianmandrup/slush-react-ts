@@ -3,7 +3,10 @@
 import React from "react-native";
 const { StyleSheet, Text, View } = React;
 
-export default class App extends React.Component<any, any> {
+interface Props {
+}
+
+export default class App extends React.Component<Props, {}> {
     render() {
         return (
             <View style={styles.container}>

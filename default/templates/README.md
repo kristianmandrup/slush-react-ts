@@ -2,9 +2,9 @@
 
 A React Native app with TypeScript.
 
-## Advanced templates
-
-Each branch in this repository has a more complex setup based on a previous one.
+Using React with TypeScript
+- [Get started](http://source.coveo.com/2015/11/21/using-react-jsx-with-typescript/)
+- [Workflow](http://blog.wolksoftware.com/working-with-react-and-typescript)
 
 ## Getting Started
 
@@ -33,6 +33,10 @@ npm run android
 ```
 
 Or just `react-native android`
+
+### Testing
+
+This project is configured for using [Jest](https://facebook.github.io/jest/docs/tutorial-react.html)
 
 ## TypeScript
 
