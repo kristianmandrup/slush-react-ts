@@ -1,4 +1,4 @@
-var defaults = require('./defaults');
+var defaults = require('../defaults');
 
 module.exports = [{
         name: 'appName',

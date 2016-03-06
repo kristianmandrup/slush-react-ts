@@ -32,6 +32,7 @@ module.exports = function (done) {
             if (!answers.moveon) {
                 return done();
             }
+            answers.appNameSlug = _.slugify(answers.appName);
             doTemplates(answers, done);
         });
 };

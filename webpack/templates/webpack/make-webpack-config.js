@@ -12,12 +12,12 @@ module.exports = function(options) {
       todos: [
         'webpack-dev-server/client?http://0.0.0.0:2992',
         'webpack/hot/only-dev-server',
-        './client/index'
+        './<%= srcPath %>/index'
       ]
     };
   } else {
     entry = {
-      todos: './client/index'
+      todos: './<%= srcPath %>/index'
     }
   }
 
