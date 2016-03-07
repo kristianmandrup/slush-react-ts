@@ -119,6 +119,11 @@ For a `todo` model, it will create the following files:
 
 See the [CONTRIBUTING Guidelines](https://github.com/kristianmandrup/slush-react-native-ts-generator/blob/master/CONTRIBUTING.md)
 
+1. Fork and clone the repo
+2. Use `npm link` to install locally
+3. Run generator as decribed above
+4. Debug, fix and improve
+
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/kristianmandrup/slush-react-native-ts-generator/issues).
 
