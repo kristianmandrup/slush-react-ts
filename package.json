@@ -1,18 +1,18 @@
 {
-  "name": "slush-react-native-ts-generator",
+  "name": "slush-react-ts",
   "description": "React Native with Typescript",
-  "version": "0.1.1",
-  "homepage": "https://github.com/kristianmandrup/slush-react-native-ts-generator",
+  "version": "0.1.2",
+  "homepage": "https://github.com/kristianmandrup/slush-react-ts",
   "author": {
     "name": "Kristian Mandrup",
     "email": "kmandrup@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kristianmandrup/slush-react-native-ts-generator.git"
+    "url": "git://github.com/kristianmandrup/slush-react-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/kristianmandrup/slush-react-native-ts-generator/issues"
+    "url": "https://github.com/kristianmandrup/slush-react-ts/issues"
   },
   "license": "MIT",
   "main": "slushfile.js",
@@ -35,6 +35,7 @@
     "inquirer": "^0.8.0",
     "run-sequence": "^1.1.5",
     "slush": ">=1.0.0",
+    "sugar": "^1.4.1",
     "underscore.string": "^2.3.3"
   },
   "keywords": [

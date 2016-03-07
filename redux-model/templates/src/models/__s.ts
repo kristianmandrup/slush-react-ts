@@ -1,4 +1,4 @@
-export type Todo = {
+export type <%= modelClassName %> = {
   id?: number;
   text: string;
   completed: boolean;

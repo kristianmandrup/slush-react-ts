@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-// import todos from './todos';
+import <%= modelPluralName %> from './<%= modelPluralName %>';
 
 const rootReducer = combineReducers({
-  // todos: todos
+  <%= modelPluralName %>
 });
 
 export { rootReducer };

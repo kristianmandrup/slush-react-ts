@@ -1,4 +1,4 @@
-# Slush React Native TypeScript generator [![Build Status](https://secure.travis-ci.org/kristianmandrup/slush-react-native-ts-generator.png?branch=master)](https://travis-ci.org/kristianmandrup/slush-react-native-ts-generator) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-react-native-ts-generator.png)](http://badges.enytc.com/for/npm/slush-react-native-ts-generator)
+# Slush React Native TypeScript generator [![Build Status](https://secure.travis-ci.org/kristianmandrup/slush-react-ts-generator.png?branch=master)](https://travis-ci.org/kristianmandrup/slush-react-ts-generator) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-react-ts-generator.png)](http://badges.enytc.com/for/npm/slush-react-ts-generator)
 
 Use this generator to create a basic React Native app with 
 TypeScript support (ie. [TSX](https://github.com/Microsoft/TypeScript/wiki/JSX)).
@@ -19,13 +19,15 @@ Be sure to follow [VSC Updates](https://code.visualstudio.com/Updates)
 
 ## Getting Started
 
-Install `slush-react-native-ts-generator` globally:
+Install `slush-react-ts-generator` globally:
 
 ```bash
-$ npm install -g slush-react-native-ts-generator
+$ npm install -g slush-react-ts-generator
 ```
 
-### Usage
+### Usage: React Native
+
+The `default` generator configures a React Native app for TypeScript
 
 Create a react-native app:
 
@@ -37,7 +39,7 @@ Run the generator from within the folder of the react-native app:
 
 ```bash
 projects $ cd my-app
-my-app $ slush react-native-ts-generator
+my-app $ slush react-ts
 ```
 
 ### Troubleshooting
@@ -53,25 +55,19 @@ $ npm uninstall -g react-native-cli
 $ npm install -g react-native-cli
 ```
 
-## Slush
+## Sub generators
 
-To find out more about Slush, check out the [documentation](https://github.com/slushjs/slush).
+Currently we have TypeScript sub-generators for:
+- `redux` : configure app for using Redux
+- `redux-model` : create full Redux domain model setup
+- `webpack` : configure webpack
+- `web` : create react web app
 
-## WIP
+Usage example: `$ slush react-ts:redux`
 
-Currently adding TypeScript generators for:
-- Redux
-- Webpack
-- Web
-- ...
+Feel free to suggest and contribute with more/better generators!
 
-Feel free to suggest on contribute with more generators!
-
-### TODO
-
-Webpack config from [todomvc example](https://github.com/jaysoo/todomvc-redux-react-typescript/)
-
-Suggestions and pull requests most welcome!!
+Note: These generators are a WIP (under development) so you might (still) encounter bugs.
 
 ## Contributing
 
@@ -79,6 +75,10 @@ See the [CONTRIBUTING Guidelines](https://github.com/kristianmandrup/slush-react
 
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/kristianmandrup/slush-react-native-ts-generator/issues).
+
+## Slush
+
+To find out more about Slush, check out the [documentation](https://github.com/slushjs/slush).
 
 ## License
 
