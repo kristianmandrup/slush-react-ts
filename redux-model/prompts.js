@@ -1,6 +1,6 @@
 module.exports = [{
         name: 'modelName',
-        message: 'What is the name of your model?',
+        message: 'Name your model?',
         default: 'todo'
     }, {
         type: 'confirm',

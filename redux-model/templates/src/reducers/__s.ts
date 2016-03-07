@@ -2,11 +2,11 @@ import { handleActions, Action } from 'redux-actions';
 
 import { <%= modelClassName %> } from '../models/todos';
 import {
-  ADD_<%= modelConstName %>,
-} from '../constants/ActionTypes';
+  Actions
+} from '../constants/<%= modelPluralName %>';
 
 const initialState = [<<%= modelClassName %>>{
-  text: 'Use Redux with TypeScript',
+  text: '<%= modelClassName %>',
   completed: false,
   id: 0
 }];
@@ -17,7 +17,7 @@ function nextId(state, entity) {
 }
 
 export default handleActions <<%= modelClassName %>[] > ({
-  [ADD_ <%= modelConstName %>]: (state: <%= modelClassName %>[], action: Action): <%= modelClassName %>[] => {
+  [Actions.Add]: (state: <%= modelClassName %>[], action: Action): <%= modelClassName %>[] => {
     return [{
       id: nextId(state, todo),
       completed: action.payload.completed,

@@ -1,7 +1,7 @@
 module.exports = [{
-        name: 'modelName',
-        message: 'What is the name of your model?',
-        default: 'todo'
+        name: 'specFolderName',
+        message: 'Name your spec/test folder?',
+        default: '__spec__'
     }, {
         type: 'confirm',
         name: 'moveon',

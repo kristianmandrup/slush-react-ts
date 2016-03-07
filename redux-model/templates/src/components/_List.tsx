@@ -4,11 +4,11 @@ import { <%= modelClassName %> } from '../models/<%= modelName %>';
 import <%= modelClassName %>Item from './<%= modelClassName %>Item';
 
 import {
-  SHOW_ALL
-} from '../constants/Filters';
+  Filters
+} from '../constants/<%= modelPluralName %>';
 
 const <%= modelConstName %>_FILTERS = {
-  [SHOW_ALL]: () => true,
+  [Filters.ShowAll]: () => true,
 };
 
 interface <%= modelClassName %>ListProps {
@@ -22,7 +22,7 @@ interface <%= modelClassName %>ListState {
 class <%= modelClassName %>List extends React.Component < <%= modelClassName %>ListProps, <%= modelClassName %>ListState > {
   constructor(props, context) {
     super(props, context);
-    this.state = { filter: SHOW_ALL };
+    this.state = { filter: Filters.ShowAll };
   }
 
 

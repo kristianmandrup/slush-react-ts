@@ -67,7 +67,53 @@ Usage example: `$ slush react-ts:redux`
 
 Feel free to suggest and contribute with more/better generators!
 
-Note: These generators are a WIP (under development) so you might (still) encounter bugs.
+Note: These generators are WIP (under development/testing) so you might encounter bugs.
+
+### Redux
+
+Configures the `src` folder for Redux as follows:
+
+```bash
+/actions
+    /__spec__
+/components
+/constants
+/containers
+    App.tsx
+/models
+/reducers
+    /__spec__
+    rootReducer.ts
+```
+
+The `__spec__` folders contain your specs/tests
+
+### Redux model
+
+Asks for a model name (default: `todo`)
+For a `todo` model, it will create the following files:
+
+```bash
+/actions
+    /__spec__
+        todos-spec.ts
+    todos.ts
+/components
+    TodoItem.tsx
+    TodoList.tsx
+/constants
+    todos.ts
+/containers
+    TodoContainer.tsx
+/models
+    todos.ts
+/reducers
+    /__spec__
+      todos-spec.ts
+    todos.ts
+```
+
+
 
 ## Contributing
 

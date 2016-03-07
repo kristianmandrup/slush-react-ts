@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-import { <%= modelClassName %> } from '../models/todos';
+import { <%= modelClassName %> } from '../models/<%= modelPluralName %>';
 
 interface <%= modelClassName %>ItemProps {
   <%= modelName %>: <%= modelClassName %>;

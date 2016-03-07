@@ -27,6 +27,9 @@ function doTemplates(answers, done) {
     gulp.src(__dirname + '/templates/**')
     .pipe(template(answers))
     .pipe(rename(function (file) {
+        if (file.basename == '__spec__')
+            return answers.specFolderName;
+
         if (file.basename[0] === '_') {
             var rest = file.basename.slice(1);
             file.basename = fileBaseName(rest, answers);

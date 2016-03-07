@@ -11,11 +11,25 @@
     "react-native": "^0.20.0"
   },
   "devDependencies": {
+    "babel-jest": "^9.0.0",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "jest-cli": "*",
+    "react-addons-test-utils": "~0.14.0",
     "concurrently": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-typescript": "^2.12.1",
     "typescript": "^1.8.7",
-    "chai": "x",
-    "jest": "x"
+    "chai": "^3.4.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
   }
 }

@@ -1,10 +1,10 @@
 import { createAction, Action } from 'redux-actions';
 
 import { <%= modelClassName %> } from '../models/<%= modelPluralName %>';
-import * as types from '../constants/ActionTypes';
+import Actions from '../constants/<%= modelPluralName %>';
 
 const add<%= modelClassName %> = createAction <<%= modelClassName %>>(
-  types.ADD_ <%= modelConstName %>,
+  Actions.Add,
   (text: string) => ({ text, completed: false })
 );
 
