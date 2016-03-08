@@ -42,6 +42,22 @@ projects $ cd my-app
 my-app $ slush react-ts
 ```
 
+The generator will:
+
+1. Delete the default generated `index.ios.js` and `index.android.js`
+2. Create 
+
+
+```bash
+/src
+    /native
+        /components
+    index.ios.tsx
+    index.android.tsx
+```
+
+Your TypeScript config should then be configured to compile all files in `/src` folder to a target folder such as `build`.
+
 ### Troubleshooting
 
 If you get the error `You must run this generator inside a project created with react-native-cli` make sure you are running the generator from a folder with an `ios` or `android` folder (or both).
