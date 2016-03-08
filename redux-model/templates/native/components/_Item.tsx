@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { <%= modelClassName %> } from '../models/<%= modelPluralName %>';
+import { <%= modelClassName %> } from '../../flux/models/<%= modelPluralName %>';
 
 interface <%= modelClassName %>ItemProps {
-  <%= modelName %>: <%= modelClassName %>;
+  label: string;
 }
 interface <%= modelClassName %>ItemState {
   editing: boolean;
@@ -18,14 +18,16 @@ class <%= modelClassName %>Item extends React.Component <<%= modelClassName %>It
   }
 
   render() {
-    return <View>
-      <Text style={styles.<%= modelName %>}>{ this.props.<%= modelName %>.label }</Text>
+    return <View style={styles.<%= modelName %>}>
+      <Text style={styles.<%= modelName %>}Text>{ this.props.label }</Text>
     </View>
   }
 }
 
 const styles = StyleSheet.create({
   <%= modelName %>: {
+  },
+  <%= modelNameText %>: {
   }
 });
 

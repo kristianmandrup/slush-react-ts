@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import * as React from 'react';
 
 import { <%= modelClassName %>List } from '../components/<%= modelClassName %>List';
-import * as <%= modelClassName %>Actions from '../actions/<%= modelPluralName %>';
-import { <%= modelClassName %> } from '../models/<%= modelPluralName %>';
+import * as <%= modelClassName %>Actions from '../../flux/actions/<%= modelPluralName %>';
+import { <%= modelClassName %> } from '../../flux/models/<%= modelPluralName %>';
 
 interface <%= modelClassName %>Props {
   <%= modelPluralName %>: <%= modelClassName %>[];

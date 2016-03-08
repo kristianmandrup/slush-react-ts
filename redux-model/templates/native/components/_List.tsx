@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { <%= modelClassName %> } from '../models/<%= modelName %>';
+import { <%= modelClassName %> } from '../../flux/models/<%= modelName %>';
 import <%= modelClassName %>Item from './<%= modelClassName %>Item';
 
 import {
   Filters
-} from '../constants/<%= modelPluralName %>';
+} from '../../flux/constants/<%= modelPluralName %>';
 
 const <%= modelConstName %>_FILTERS = {
   [Filters.ShowAll]: () => true,
@@ -19,10 +19,18 @@ interface <%= modelClassName %>ListState {
   filter: string;
 };
 
+
 class <%= modelClassName %>List extends React.Component < <%= modelClassName %>ListProps, <%= modelClassName %>ListState > {
   constructor(props, context) {
     super(props, context);
-    this.state = { filter: Filters.ShowAll };
+
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const mock<%= modelClassName %>List = ['row 1', 'row 2'];
+
+    this.state = {
+      dataSource: ds.cloneWithRows(mock<%= modelClassName %>List),
+      filter: Filters.ShowAll
+    };
   }
 
 
@@ -30,14 +38,14 @@ class <%= modelClassName %>List extends React.Component < <%= modelClassName %>L
     const { <%= modelPluralName %>, actions
   } = this.props;
 
-    return <ListView style= { styles.<%= modelName %>List } >
-  {<%= modelPluralName %>.map(<%= modelName %> =>
-          <<%= modelClassName %>Item
-      key={<%= modelName %>.id}
-          <%= modelName %> = {<%= modelName %>}
-            { ...actions }/>
-        ) }
-      </ListView>
+    return <ListView style={styles.<%= modelName %>List}
+              dataSource={this.state.dataSource}
+              renderRow={(data) => _renderRow(data)}>
+           </ListView>;
+  }
+
+  _renderRow(data) {
+    return <<%= modelClassName %>Item {...data}/>;
   }
 }
 

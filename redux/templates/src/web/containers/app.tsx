@@ -12,7 +12,7 @@ import {
 } from 'react-redux';
 
 import App from './containers/App';
-import { rootReducer } from './reducers/root';
+import { rootReducer } from '../flux/reducers/root';
 
 const initialState = {};
 

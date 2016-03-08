@@ -23,8 +23,9 @@ function fileBaseName(rest, answers) {
     return answers.modelName;
 }
 
-function doTemplates(answers, done) {
-    gulp.src(__dirname + '/templates/**')
+function doTemplates(answers, dir, done) {
+    dir = dir || 'src';
+    gulp.src(__dirname + '/templates/' + dir + '/**')
     .pipe(template(answers))
     .pipe(rename(function (file) {
         if (file.basename == '__spec__')
@@ -35,8 +36,8 @@ function doTemplates(answers, done) {
             file.basename = fileBaseName(rest, answers);
         }
     }))
-    .pipe(conflict('./'))
-    .pipe(gulp.dest('./'))
+    .pipe(conflict('./' + dir))
+    .pipe(gulp.dest('./' + dir))
     .pipe(install())
     .on('end', function () {
         done();
@@ -52,10 +53,29 @@ module.exports = function (done) {
             if (!answers.moveon) {
                 return done();
             }
+            var platforms = answers.platforms;
+            answers.native = platforms.indexOf('native') >= 0;
+            answers.web = platforms.indexOf('web') >= 0;
+
             answers.modelConstName = answers.modelName.toUpperCase();
             answers.modelClassName = answers.modelName.capitalize();
             answers.modelPluralName = answers.modelName.pluralize();
 
-            doTemplates(answers, done);
+
+            gulp.task('native', function() {
+                if (answers.native)
+                    doTemplates(answers, 'native', done);
+            });
+
+            gulp.task('web', function() {
+                if (answers.web)
+                    doTemplates(answers, 'web', done);
+            });
+
+            gulp.task('domain-model', ['web', 'native'], function() {
+                doTemplates(answers, 'src', done);
+            });
+
+            runSequence('domain-model');
         });
 };
