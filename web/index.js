@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
     chalk = require('chalk-log'),
-    inquirer = require('inquirer');
+    inquirer = require('inquirer'),
+    extend = require('extend'),
+    jsonfile = require('jsonfile');
 
 function doTemplates(answers, done) {
     gulp.src(__dirname + '/templates/**')
@@ -26,12 +28,26 @@ function doTemplates(answers, done) {
 module.exports = function (done) {
     var prompts = require('./prompts');
 
+    function mergePackage() {
+        try {
+            var depsObj = require('./dependencies.json');
+            var packageObj = jsonfile.readFileSync('./package.json');
+            var newPackage = extend(true, packageObj, depsObj);
+            chalk.log('Patching: package.json');
+            jsonfile.writeFileSync('./package.json', newPackage, {spaces: 2});
+        } catch(e) {
+            console.error(e);
+        }
+    };
+
+
     //Ask
     inquirer.prompt(prompts,
         function (answers) {
             if (!answers.moveon) {
                 return done();
             }
+            mergePackage();
             doTemplates(answers, done);
         });
 };

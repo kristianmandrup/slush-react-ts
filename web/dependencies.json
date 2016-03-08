@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-dom": "^0.14.7",
+    "classnames": "^2.2.3"
+  }
+}

@@ -1,14 +1,9 @@
 {
-  "name": "<%= appNameSlug %>",
-  "version": "0.0.1",
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
     "cli": "concurrent \"npm run watch\" \"node node_modules/react-native/local-cli/cli.js start\" ",
     "android": "adb reverse tcp:8081 tcp:8081 && node node_modules/react-native/local-cli/cli.js run-android"
-  },
-  "dependencies": {
-    "react-native": "^0.20.0"
   },
   "devDependencies": {
     "babel-jest": "^9.0.0",
@@ -20,7 +15,8 @@
     "gulp": "^3.9.1",
     "gulp-typescript": "^2.12.1",
     "typescript": "^1.8.7",
-    "chai": "^3.4.1"
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3"
   },
   "scripts": {
     "test": "jest"

@@ -22,6 +22,6 @@ var packInfo = require('./package.json');
 chalk.note('React Native Typescript generator: v.' + packInfo.version);
 
 for (let name of ['redux', 'redux-model', 'web', 'webpack']) {
-  tasks[name] = require('./' + name)();
+  tasks[name] = require('./' + name);
   gulp.task(name, tasks[name]);
 }

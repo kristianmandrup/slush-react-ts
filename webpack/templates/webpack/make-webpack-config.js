@@ -9,7 +9,7 @@ module.exports = function(options) {
 
   if (options.development) {
     entry = {
-      todos: [
+      <%= appName %>: [
         'webpack-dev-server/client?http://0.0.0.0:2992',
         'webpack/hot/only-dev-server',
         './<%= srcPath %>/index'
@@ -17,7 +17,7 @@ module.exports = function(options) {
     };
   } else {
     entry = {
-      todos: './<%= srcPath %>/index'
+      <%= appName %>: './<%= srcPath %>/index'
     }
   }
 
@@ -42,7 +42,7 @@ module.exports = function(options) {
   var plugins = [
     new webpack.PrefetchPlugin("react"),
     new webpack.PrefetchPlugin("react/lib/ReactComponentBrowserEnvironment"),
-    new StatsPlugin(path.join(__dirname, "..", "build", options.development ? "stats-dev.json" : "stats.json"), {
+    new StatsPlugin(path.join(__dirname, "..", "<%= targetPath %>", options.development ? "stats-dev.json" : "stats.json"), {
       chunkModules: true
     })
   ];
@@ -106,7 +106,7 @@ module.exports = function(options) {
   return {
     entry: entry,
     output: {
-      path: path.join(__dirname, "..", "build", options.development ? "development" : "public"),
+      path: path.join(__dirname, "..", "<%= targetPath %>", options.development ? "development" : "public"),
       publicPath: publicPath,
       filename: options.development ? "[id].js" : "[name].js",
       chunkFilename: "[id].js",

@@ -1,6 +1,6 @@
 import { handleActions, Action } from 'redux-actions';
 
-import { <%= modelClassName %> } from '../models/todos';
+import { <%= modelClassName %> } from '../models/<%= modelPluralName %>';
 import {
   Actions
 } from '../constants/<%= modelPluralName %>';
@@ -19,7 +19,7 @@ function nextId(state, entity) {
 export default handleActions <<%= modelClassName %>[] > ({
   [Actions.Add]: (state: <%= modelClassName %>[], action: Action): <%= modelClassName %>[] => {
     return [{
-      id: nextId(state, todo),
+      id: nextId(state, <%= modelName %>),
       completed: action.payload.completed,
       text: action.payload.text
     }, ...state];

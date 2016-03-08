@@ -1,32 +1,17 @@
 var defaults = require('../defaults');
 
 module.exports = [{
-        name: 'appName',
-        message: 'What is the name of your project?',
-        default: defaults.appName
-    }, {
-        name: 'appDescription',
-        message: 'What is the description?'
-    }, {
-        name: 'appVersion',
-        message: 'What is the version of your project?',
-        default: '0.1.0'
-    }, {
-        name: 'authorName',
-        message: 'What is the author name?',
-        default: defaults.authorName
-    }, {
-        name: 'authorEmail',
-        message: 'What is the author email?',
-        default: defaults.authorEmail
-    }, {
-        name: 'userName',
-        message: 'What is the github username?',
-        default: defaults.userName
-    }, {
+      name: 'appName',
+      message: 'Your app name?',
+      default: 'todos'
+    },{
       name: 'srcPath',
-      message: 'What is your src path?',
+      message: 'Your src path?',
       default: 'src'
+    }, {
+      name: 'targetPath',
+      message: 'Your target (build) path?',
+      default: 'build'
     }, {
         type: 'confirm',
         name: 'moveon',

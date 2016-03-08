@@ -5,7 +5,11 @@ var gulp = require('gulp'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
     chalk = require('chalk-log'),
-    inquirer = require('inquirer');
+    inquirer = require('inquirer'),
+    extend = require('extend'),
+    jsonfile = require('jsonfile')
+    shell = require('gulp-shell'),
+    runSequence = require('run-sequence');
 
 function doTemplates(answers, done) {
     gulp.src(__dirname + '/templates/**')
@@ -26,8 +30,21 @@ function doTemplates(answers, done) {
     });
 }
 
+
 module.exports = function (done) {
     var prompts = require('./prompts');
+
+    function addReduxDeps() {
+        try {
+            var depsObj = require('./dependencies.json');
+            var packageObj = jsonfile.readFileSync('./package.json');
+            var newPackage = extend(true, packageObj, depsObj);
+            chalk.log('Patching: package.json');
+            jsonfile.writeFileSync('./package.json', newPackage, {spaces: 2});
+        } catch(e) {
+            console.error(e);
+        }
+    };
 
     //Ask
     inquirer.prompt(prompts,
@@ -35,6 +52,13 @@ module.exports = function (done) {
             if (!answers.moveon) {
                 return done();
             }
-            doTemplates(answers, done);
+
+            gulp.task('config-app', function() {
+                chalk.note('Configure redux');
+                addReduxDeps();
+                doTemplates(answers, done);
+            });
+
+            runSequence('config-app');
         });
 };

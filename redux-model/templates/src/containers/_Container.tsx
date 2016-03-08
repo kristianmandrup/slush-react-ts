@@ -17,10 +17,10 @@ class <%= modelClassName %>Container extends React.Component < <%= modelClassNam
   } = this.props;
   const actions = bindActionCreators(<%= modelClassName %>Actions, dispatch);
 
-  return <<%= modelClassName %>List
+  return <<%= modelClassName %>List>
   <%= modelPluralName %>={ <%= modelPluralName %> }
           actions={actions}/>
-      </<%= modelClassName %>List >
+      </<%= modelClassName %>List>
     );
   }
 }

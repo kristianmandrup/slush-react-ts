@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "chalk-log": "^1.2.0",
+    "extend": "^3.0.0",
     "gulp": "^3.6.2",
     "gulp-conflict": "^0.1.1",
     "gulp-install": "^0.1.4",
@@ -33,6 +34,7 @@
     "gulp-template": "^0.1.1",
     "iniparser": "^1.0.5",
     "inquirer": "^0.8.0",
+    "jsonfile": "^2.2.3",
     "run-sequence": "^1.1.5",
     "slush": ">=1.0.0",
     "sugar": "^1.4.1",

@@ -5,7 +5,7 @@ import <%= modelPluralName %> from '../<%= modelPluralName %>';
 
 import {
   ADD_<%= modelConstName %>,
-} from '../../constants/ActionTypes';
+} from '../../constants/<%= modelPluralName %>';
 
 describe('<%= modelName %> reducer', () => {
   it('handles add', () => {

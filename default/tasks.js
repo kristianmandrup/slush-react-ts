@@ -4,20 +4,26 @@ var gulp = require('gulp'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
     chalk = require('chalk-log'),
-    shell = require('gulp-shell');
+    shell = require('gulp-shell'),
+    extend = require('extend'),
+    jsonfile = require('jsonfile');
 
+var fs = require('fs'),
+    path = require('path');
 
 function hasDir(directory) {
   try {
-    console.log('has dir', directory, fs.statSync(directory));
-    return fs.statSync(directory);
+    console.log('has dir', directory);
+    var stats = fs.statSync(directory);
+    return stats;
   } catch(e) {
+    console.log('nope', e);
     return false;
   }
 }
 
 function isNative() {
-    return hasDir('ios') || hasDir('android');
+    return hasDir('./ios') || hasDir('./android');
 }
 
 module.exports = function (answers) {
@@ -48,9 +54,21 @@ module.exports = function (answers) {
         return tasks;
     }
 
+    gulp.task('merge-package', function() {
+        try {
+            var depsObj = require('./dependencies.json');
+            var packageObj = jsonfile.readFileSync('./package.json');
+            var newPackage = extend(true, packageObj, depsObj);
+            chalk.log('Patching: package.json');
+            jsonfile.writeFileSync('./package.json', newPackage, {spaces: 2});
+        } catch(e) {
+            console.error(e);
+        }
+    });
+
     gulp.task('prepare-project', shell.task(prepareTasks(answers.appNameSlug)));
 
-    gulp.task('ts-react-templates', ['prepare-project'], function() {
+    gulp.task('ts-react-templates', ['prepare-project', 'merge-package'], function() {
         doTemplates(answers);
     });
 }
