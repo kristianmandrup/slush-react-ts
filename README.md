@@ -1,5 +1,7 @@
 # Slush React Native TypeScript generator [![Build Status](https://secure.travis-ci.org/kristianmandrup/slush-react-ts.png?branch=master)](https://travis-ci.org/kristianmandrup/slush-react-ts) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-react-ts.png)](http://badges.enytc.com/for/npm/slush-react-ts)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kristianmandrup/slush-react-ts.svg)](https://greenkeeper.io/)
+
 Use this generator to create a basic React Native app with
 TypeScript support (ie. [TSX](https://github.com/Microsoft/TypeScript/wiki/JSX)).
 
