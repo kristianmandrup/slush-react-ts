@@ -27,18 +27,18 @@
     "chalk-log": "^1.2.0",
     "extend": "^3.0.0",
     "gulp": "^3.6.2",
-    "gulp-conflict": "^0.1.1",
-    "gulp-install": "^0.1.4",
+    "gulp-conflict": "^0.4.0",
+    "gulp-install": "^1.1.0",
     "gulp-rename": "^1.2.0",
-    "gulp-shell": "^0.5.2",
-    "gulp-template": "^0.1.1",
+    "gulp-shell": "^0.6.3",
+    "gulp-template": "^4.0.0",
     "iniparser": "^1.0.5",
-    "inquirer": "^0.8.0",
+    "inquirer": "^3.0.6",
     "jsonfile": "^2.2.3",
     "run-sequence": "^1.1.5",
     "slush": ">=1.0.0",
-    "sugar": "^1.4.1",
-    "underscore.string": "^2.3.3"
+    "sugar": "^2.0.4",
+    "underscore.string": "^3.3.4"
   },
   "keywords": [
     "slushgenerator"
